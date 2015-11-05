@@ -13,6 +13,8 @@ Just put valid json string into html tab like following
 {"name":"wangpin","home":"weinan","children":["Emma","Bob"]}
 </div>
 ```
+## Examples
+* [general](https://rawgit.com/wangpin34/ac/master/examples/index.html)
 
 ## LICENSE
 MIT
