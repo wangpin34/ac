@@ -1,0 +1,18 @@
+{
+  "name": "ac",
+  "version": "0.0.0",
+  "description": "Json Viewer Built on react",
+  "main": "ac.js",
+  "scripts": {
+    "test": "",
+    "build": "grunt",
+    "dev-watch": "grunt browserSync"
+  },
+  "author": "wangpin",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.1.3",
+    "grunt-contrib-uglify": "^0.10.0"
+  }
+}

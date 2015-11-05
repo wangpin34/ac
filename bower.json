@@ -1,0 +1,22 @@
+{
+  "name": "ac",
+  "description": "tiny json viewer",
+  "main": "src/ac.js",
+  "authors": [
+    "wangpin"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "viewer"
+  ],
+  "moduleType": [],
+  "homepage": "none",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
