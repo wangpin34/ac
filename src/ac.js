@@ -1,8 +1,8 @@
-function jsonview(data) {
+function Jsonview(data) {
     this.data = data;
 }
 
-jsonview.prototype.genHtml = function() {
+Jsonview.prototype.genHtml = function() {
 
     var gen = function(d) {
         try {
@@ -16,21 +16,38 @@ jsonview.prototype.genHtml = function() {
             ds = ds.replace(/\s/gim, '&nbsp;');
             return ds;
         }catch(err){
-            console.log('JSON object parsed failed');
+            throw new Error('JSON object parsed failed');
         }
     }
 
     return '<p>' + gen(this.data) + '</p>';
 };
 
+function addEvent(el, eventType, listener){
+    if(el.addEventListener){
+        el.addEventListener(eventType, listener);
+    }else{
+        el.attach(eventType,function(){
+            listener(window.event);
+        });
+    }
+}
 
-$(function() {
-    $('.json-viewer').each(function() {
-        var jv = $(this);
-        var data = $(this).text();
-        var jvObj = new jsonview(data);
-        var dom = $(jvObj.genHtml());
-        $(this).html('');
-        $(this).append(dom);
-    });
-});
+window.onload = function(){
+    var jsonBox = document.querySelector('#input'),
+        parseBtn = document.querySelector('#parse'),
+        outputs = document.getElementById('outputs');
+
+    addEvent(parseBtn, 'click', function(){
+        var raw = jsonBox.innerText;
+        var jsonView = new Jsonview(raw);
+        var html = jsonView.genHtml();
+        var output = document.createElement('li');
+        output.innerHTML = '<div>' + html + '</div>';
+        outputs.appendChild(output);
+    })
+
+    
+
+}
+
