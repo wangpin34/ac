@@ -8,9 +8,9 @@ Jsonview.prototype.genHtml = function() {
         try {
             var ds = '';
             if(typeof d === 'object'){
-                ds = JSON.stringify(d, null, 2);
+                ds = JSON.stringify(d, null, 4);
             }else{
-                ds = JSON.stringify(JSON.parse(d), null, 2);
+                ds = JSON.stringify(JSON.parse(d), null, 4);
             }
             ds = ds.replace(/\n/gim, '<br/>');
             ds = ds.replace(/\s/gim, '&nbsp;');
@@ -39,7 +39,7 @@ window.onload = function(){
         outputs = document.getElementById('outputs');
 
     addEvent(parseBtn, 'click', function(){
-        var raw = jsonBox.innerText;
+        var raw = jsonBox.value;
         var jsonView = new Jsonview(raw);
         var html = jsonView.genHtml();
         var output = document.createElement('li');
