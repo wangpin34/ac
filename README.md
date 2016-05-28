@@ -1,20 +1,9 @@
 # AC
-AC is a tiny json viewer which can be pluged in your pages,web viewers
+AC 是一个简单的 json formater，可以在线使用。
 
-## Install
-```
-bower install ac
-```
-## Usage
+下面是地址：
 
-Just put valid json string into html tab like following
-```
-<div class="json-viewer">
-{"name":"wangpin","home":"weinan","children":["Emma","Bob"]}
-</div>
-```
-## Examples
-* [general](https://rawgit.com/wangpin34/ac/master/examples/index.html)
+* [AC](https://rawgit.com/wangpin34/ac/master/src/index.html)
 
 ## LICENSE
 MIT
