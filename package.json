@@ -1,22 +1,37 @@
 {
   "name": "ac",
   "version": "0.0.0",
-  "description": "Json Viewer Built on react",
+  "description": "Json Viewer Built on vuejs",
   "main": "ac.js",
   "scripts": {
-    "test": "",
-    "build": "grunt",
-    "dev-watch": "grunt browserSync"
+    "dev": "webpack-dev-server --inline --hot --content-base www",
+    "build": "webpack -p --colors"
   },
   "author": "wangpin",
   "license": "MIT",
+  "dependencies": {
+    "vue": "^1.0.24"
+  },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-browser-sync": "^2.1.3",
-    "grunt-contrib-uglify": "^0.10.0"
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-runtime": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.7.0",
+    "sass-loader": "^3.2.0",
+    "vue-hot-reload-api": "^1.3.2",
+    "vue-html-loader": "^1.2.2",
+    "vue-loader": "^8.4.0",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:wangpin34/ac.git"
-  },
+  }
 }
