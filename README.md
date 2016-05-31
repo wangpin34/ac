@@ -1,9 +1,11 @@
 # AC
-AC 是一个简单的 json formater，可以在线使用。
+AC 是一个简单的 json formater。
 
-下面是地址：
 
-* [AC](https://rawgit.com/wangpin34/ac/master/src/index.html)
+![work-panel](http://rawgit.com/wangpin34/ac/master/assets/work-panel.JPG)
+
+
+![json-viewer](http://rawgit.com/wangpin34/ac/master/assets/json-output.JPG)
 
 ## LICENSE
 MIT
