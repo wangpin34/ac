@@ -1,23 +1,27 @@
-<template name="jsonnode" :class="classObject">
+<template name="jsonnode">
 	<template v-if="type === 1">
 		<span class="node">"{{node}}"</span>
 	</template>
 	<template v-if="type === 2">
 		<span>[</span>
-		<span v-show="expand" v-else class="icon close" v-on:click="handleClose">-</span>
-		<span v-else class="icon expand" v-on:click="handleExpand">+</span>
-		<ul v-show="expand">
-			<li v-for="el in node"><json-node :node="el"></json-node><span v-if="$index<(node.length - 1)" class="delimiter">,</span></li>
-		</ul>
+		<template v-if="node.length > 0">
+			<span v-show="expand" v-else class="icon close" v-on:click="handleClose">-</span>
+			<span v-else class="icon expand" v-on:click="handleExpand">+</span>
+			<ul v-show="expand">
+				<li v-for="el in node" track-by="$index"><json-node :node="el"></json-node><span v-if="$index<(node.length - 1)" class="delimiter">,</span></li>
+			</ul>
+		</template>
 		<span>]</span>
 	</template>
 	<template v-if="type === 3">
 		<span>{</span>
-		<span v-show="expand" v-else class="icon close" v-on:click="handleClose">-</span>
-		<span v-else class="icon expand" v-on:click="handleExpand">+</span>
-		<ul v-show="expand">
-			<li v-for="(key,val) in node"><span>"{{key}}":</span><json-node :node="val"></json-node><span v-if="$index<(keys.length - 1)" class="delimiter">,</span></li>
-		</ul>
+		<template v-if="keys.length > 0">
+			<span v-show="expand" v-else class="icon close" v-on:click="handleClose">-</span>
+			<span v-else class="icon expand" v-on:click="handleExpand">+</span>
+			<ul v-show="expand">
+				<li v-for="(key,val) in node" track-by="$index"><span>"{{key}}":</span><json-node :node="val"></json-node><span v-if="$index<(keys.length - 1)" class="delimiter">,</span></li>
+			</ul>
+		</template>
 		<span>}</span>
 	</template>
 </template>
@@ -34,12 +38,15 @@ export default {
 
 		switch(typeof this.node) {
 			case 'string': type = 1; break
-			case 'object': 
+			case 'object':
 				if(this.node instanceof	Array) {
 					type = 2
-				}else {
+				}else if(this.node instanceof Object){
 					keys = Object.keys(this.node)
 					type = 3
+				}else{
+					this.node = '';
+					type = 1;
 				}
 				break
 			default: break
@@ -48,12 +55,7 @@ export default {
 		return {
 			expand: true,
 			type,
-			keys,
-			classObject: {
-				'string-node': type === 1,
-				'array-node': type === 2,
-				'object-node': type === 3
-			}
+			keys
 		}
 	},
 
