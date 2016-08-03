@@ -29,6 +29,8 @@ $ npm install
 npm run dev
 ```
 
+在浏览器中打开 http://localhost:8080 可以看到 AC 。
+
 * 编译打包
 ```
 npm run build
