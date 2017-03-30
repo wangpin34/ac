@@ -19,7 +19,6 @@ $ git clone git@github.com:wangpin34/ac.git
 也可以 fork 之后再克隆。
 
 *　安装依赖
-所以的依赖都已定义，直接通过 npm 安装即可
 ```
 $ npm install
 ```
