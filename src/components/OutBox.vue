@@ -63,9 +63,9 @@ export default {
             valid: json.valid
         }
     },
-    method: {
+    methods: {
         onCopy() {
-            alert('fdfd');
+            //Do nothing
         }
     },
     ready() {
