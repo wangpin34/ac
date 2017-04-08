@@ -1,7 +1,7 @@
 <template>
     <section name="outbox">
         <span class="title" :class="{'valid': valid}"># {{index}}</span>
-        <button class="copyBtn" :id.once="id" :data-clipboard-text="copyText">Copy</button>
+        <button class="copy-btn" :id.once="id" :data-clipboard-text="copyText" text="Copy" :on-click="onCopy"></button>
         <json-root v-if="valid" :json="obj"></json-root>
         <div v-else>
         Error happended
@@ -11,11 +11,11 @@
 
 <style lang="sass">
 [name="outbox"] {
-    background: #CCDAD9;
+    background: #f1f1f1;
 
-    width: 440px;
+    width: 100%;
     min-height: 100px;
-    padding: 12px 30px;
+    padding: 0 0 8px 0;
     text-align: left;
     margin: 0 auto;
 
@@ -24,23 +24,30 @@
     border-radius: .5rem;
 
     .title {
-        width: 440px;
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        box-sizing: content-box;
         display: inline-block;
-        margin-bottom: 2rem;
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 8px;
         color: #ffffff;
-        background: red;
+        background: #e51c23;
         &.valid {
-            background: green;
+            background: #009688;
         }
     }
 
-    .copyBtn {
+    .copy-btn {
         float:right;
+        font-family: Sans-serif,Helvetica;
     }
 }
 </style>
 
 <script>
+import Button from './Button.vue'
 import JsonRoot from './JsonRoot.vue'
 export default {
     props: ['index','json'],
@@ -54,6 +61,11 @@ export default {
             obj: json.obj,
             err: json.err,
             valid: json.valid
+        }
+    },
+    method: {
+        onCopy() {
+            alert('fdfd');
         }
     },
     ready() {
@@ -70,7 +82,8 @@ export default {
         });
     },
     components: {
-        JsonRoot
+        JsonRoot,
+        Button
     }
 }
 </script>

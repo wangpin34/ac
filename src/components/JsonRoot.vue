@@ -12,7 +12,6 @@
 	max-height: 300px;
 	overflow: auto;
 
-
 	span {
 
 		&.node {
@@ -24,8 +23,14 @@
 		}
 
 		&.icon {
-			border: 1px solid blue;
-			font-size: 2rem;
+			display: inline-block;
+			border: 1px solid #972cb0;
+			width: 14px;
+			height: 16px;
+			font-size: 16px;
+			line-height: 16px;
+			text-align: center;
+			color: #972cb0;
 			cursor: pointer;
 			padding: 1px 5px;
 			background: #ffffff;

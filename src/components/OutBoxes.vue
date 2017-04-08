@@ -8,10 +8,10 @@
 
 <style lang="sass">
 [name="outboxes"] {
-	padding: 0;
+	padding: 0 0 8px 0;
 	li {
 		list-style-type: none;
-		margin-bottom: 4rem;
+		margin-bottom: 8px;
 	}
 }
 </style>

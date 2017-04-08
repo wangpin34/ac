@@ -1,41 +1,39 @@
 <template>
   <div>
     <textarea name="input" v-model="input"></textarea>
-    <button name="ParseBtn" v-on:click="handleParse">Parse</button>
+    <Button name="parse-btn" :on-click="handleParse" text="Parse" style="width: 100%;box-sizing: border-box;"></Button>
   </div>
 </template>
 
 <style lang="sass">
 
-[name="input"] {
-  margin-top: 100px;
-  width: 480px;
-  height: 320px;
+[name=input] {
+  width: 100%;
+  height: 240px;
   padding: 10px;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #607d8b;
+  color: #607d8b;
+  font-size: 16px;
+
+  &::selection {
+    background-color: #009688;
+    color: #f1f1f1;
+  }
 }
 
-[name="ParseBtn"] {
+[name=parse-btn] {
   display: block;
-
-  width: 500px;
-  height: 5rem;
-  line-height: 5rem;
-  font-size: 3rem;
-  font-weight: bold;
-  vertical-align: middle;
-  color: green;
-
-  margin: 2rem auto 2rem auto;
-
-  background: #CCDAD9;
-  border-radius: .5rem;
-
-  cursor: pointer;
+  margin: 16px auto;
 }
 
 </style>
 
 <script>
+import Button from './Button.vue'
 
 export default {
   props: ['parse'],
@@ -50,7 +48,7 @@ export default {
     }
   },
   components: {
-    
+    Button
   }
 }
 </script>
