@@ -10,7 +10,7 @@ AC 是一个简单的 json formater。
 ## Contribution
 AC 是使用 [vuejs](http://cn.vuejs.org/) 开发的，组件使用了 [vue component](http://cn.vuejs.org/guide/application.html#单文件组件)。复制功能使用到 [ZeroClipboard.js](https://github.com/zeroclipboard/zeroclipboard)。
 
-###　搭建环境
+### 搭建环境
 * 克隆项目到本地
 
 ```
