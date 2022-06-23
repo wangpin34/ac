@@ -2,10 +2,10 @@
 AC 是一个简单的 json formater。
 
 
-![work-panel](https://rawgit.com/wangpin34/ac/master/assets/work-panel.JPG)
+![work-panel](assets/work-panel.JPG)
 
 
-![json-viewer](https://rawgit.com/wangpin34/ac/master/assets/json-output.JPG)
+![json-viewer](assets/json-output.JPG)
 
 ## Contribution
 AC 是使用 [vuejs](http://cn.vuejs.org/) 开发的，组件使用了 [vue component](http://cn.vuejs.org/guide/application.html#单文件组件)。复制功能使用到 [ZeroClipboard.js](https://github.com/zeroclipboard/zeroclipboard)。
